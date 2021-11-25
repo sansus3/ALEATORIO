@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="css/init.css"/>
+    <title>JavaScript</title>
+  </head>
+  <body>
+    <section class="container">
+      <header class="cabecera">
+        <h1 class="cabecera__title">JavaScript</h1>
+      </header>
+      <main class="contenido">
+        <article class="contenido__item">
+          <header class="subcabecera">
+            <h2 class="subcabecera__title">Funciones random(),floor()</h2>
+            <ol class="listado">
+              <fieldset class="decripcion">
+                <legend class="decripcion__legend">random()</legend>
+                <header>
+                  <h3>Explicación</h3>
+                  <p class="decripcion__p">La función Math.random() retorna un punto flotante, un número pseudo-aleatorio dentro del rango [0, 1). Esto es, desde el 0 (Incluido) hasta el 1 pero sin incluirlo (excluido), el cual se puede escalar hasta el rango deseado. La implementación selecciona la semilla inicial hasta el algoritmo que genera el número aleatorio; este no puede ser elegido o cambiado por el usuario.</p>
+                  <h3>Sintaxis</h3>
+                  <p class="descripcion__p">Math.random()</p>
+                </header>
+              </fieldset>
+              <fieldset class="decripcion">
+                <legend class="decripcion__legend">floor()</legend>
+                <header>
+                  <h3>Explicación</h3>
+                  <p class="decripcion__p">Devuelve el máximo entero menor o igual a un número.</p>
+                  <h3>Sintaxis</h3>
+                  <p class="descripcion__p">Math.floor()</p>
+                </header>
+              </fieldset>
+              <fieldset class="ejercicios">
+                <legend class="ejercicios_legend">Generar un número aleatorio</legend>
+                <ol class="ejercicio">
+                  <li class="ejercicio__item">Pide al ordenador que te genere un numero entero aleatorio entre 0 y 10 y lo muestre en pantalla.							</li>
+                  <li><code class="destacado">return Math.floor(Math.random() * (max - min)) + min;</code>
+                    <div>Referencia: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Math/random">Math.random()</a></div>
+                    <ul class="listado">
+                      <li>
+                        <button class="boton" id="b_generar">Generar aleatorio </button>
+                        <div id="serie_generar"></div>
+                        <div id="msg_generar"></div>
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
+              </fieldset>
+              <fieldset class="ejercicios">
+                <legend class="ejercicios_legend">Ejercicio Aleatorio</legend>
+                <ol class="ejercicio">
+                  <li class="ejercicio__item">Seleccionaremos un número aleatorio entre 1 y 100. Habrá 10 intentos para adivinarlo. </li>
+                  <li>Daremos pistas al usuario de si el número introducido es demasiado bajo o alto.
+                    <ul class="listado">
+                      <li>
+                        <label for="aleatorio">Teclee su conjetura</label>
+                        <input id="aleatorio" type="text"/>
+                        <button class="boton" id="b_aleatorio">Adivínelo </button>
+                        <div id="serie_aleatorio"></div>
+                        <div id="msg_aleatorio"></div>
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
+              </fieldset>
+            </ol>
+          </header>
+        </article>
+        <article>
+          <header>Ejercicios adicionales</header>
+          <ol>
+            <li>Definir una función que muestre información sobre una cadena de texto que se le pasa como argumento. A partir de la cadena que se le pasa, la función determina si esa cadena está formada sólo por mayúsculas, sólo por minúsculas o por una mezcla de ambas.<a id="enlace_1" href="#">Arrancar</a> </li>
+            <li>Definir una función que determine si la cadena de texto que se le pasa como parámetro es un palíndromo, es decir, si se lee de la misma forma desde la izquierda y desde la derecha. Ejemplo de palíndromo complejo: "La ruta nos aporto otro paso natural".<a id="enlace_2" href="#">Arrancar</a></li>
+            <li>Definir el siguiente objeto en JavaScript:<br>
+                Objeto Persona con las propiedades nombre, edad y género, y el método obtDetalles(), que muestra por pantalla las propiedades de la persona.<br>
+                Crear los objetos y casos de prueba necesarios para comprobar su correcto funcionamiento.<a id="enlace_3" href="#">Arrancar</a>
+            </li>
+          </ol>
+        </article>
+      </main>
+    </section>
+    <script src="../../js/basic.js"></script>
+    <script src="js/adivinalo.js"></script>
+  </body>
+</html>
