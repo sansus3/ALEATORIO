@@ -17,4 +17,13 @@ const clearBlankSpaces = text => {
  */
 const getRandom = (min,max) => Math.floor(Math.random()*(max-min+1))+min;
 
-export {clearBlankSpaces,getRandom}; 
+/**
+ * Función que quita los acentos de una cadena
+ * El método normalize() retorna la Forma de Normalización Unicode de la cadena dada (si el valor no es una cadena, primero será convertido a ese tipo).
+ * NFD — Forma de Normalización de Descomposición Canónica.
+ * @param {String} str Texto con acentos
+ * @returns {String} Texto sin acentos
+ */
+const removeAccents  = str => str.normalize("NFD").replace(/[\u0300-\u036f`´¨]/g,"");
+
+export {clearBlankSpaces,getRandom,removeAccents}; 
