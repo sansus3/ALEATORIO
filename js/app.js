@@ -78,7 +78,7 @@ document.querySelector("#b_aleatorio").onclick = e => {
 //
 /**
  * Función que elimina un nodo del DOMO si este existe
- * @param {String} id Nombre para seleccionar el nodo
+ * @param {String} id Nombre para seleccionar el nodo. Ejemplo: "#miNodo"
  */
 const eliminarNodo = id => {
     const nodo = document.querySelector(id);
@@ -156,3 +156,60 @@ document.querySelector("#enlace_2").onclick = e => {
         div.innerHTML = `<mark>${texto}</mark> NO es un palíndromo`;
     }
 }
+
+
+/**
+ * Objeto Persona con las propiedades nombre, edad y género, y el método obtDetalles(), que muestra por pantalla las propiedades de la persona.
+ * Un objeto es una colección de propiedades, y una propiedad es una asociación entre un nombre (o clave) y un valor. El valor de una propiedad puede ser una función, en cuyo caso la propiedad es conocida como un método.
+ */
+ document.querySelector("#enlace_3").onclick = e => {
+    e.preventDefault();
+    //object initializer --> Iniciador de objeto
+    const persona = {
+        "nombre": 'Xurxo',
+        "edad": 38,
+        "genero": "Masculino",
+        "obtDetalles": function(){
+            return `
+            <div>Nombre: ${this.nombre}</div>
+            <div>Edad: ${this.edad} años</div>
+            <div>Género: ${this.genero}</div>
+            `;
+        }
+    }
+    //Instanciando el objeto con new
+    const persona2 = new Object();
+    persona2.nombre = "Jorge";
+    persona2.edad = 39;
+    persona2.genero = "Masculino";
+    persona2.obtDetalles = function(){
+        return `
+        <div>Nombre: ${this.nombre}</div>
+        <div>Edad: ${this.edad} años</div>
+        <div>Género: ${this.genero}</div>
+        `;
+    }
+    eliminarNodo("#temporal3");
+    const div = crearNodo(e.target.parentElement,"temporal3");
+    div.innerHTML = `
+        <fieldset>
+            <legend>Persona 1:</legend>
+            ${persona.obtDetalles()}
+        </fieldset>
+        <fieldset>
+            <legend>Persona 2:</legend>
+            ${persona2.obtDetalles()}
+        </fieldset>
+    `;
+    //Establecemos un contador que eliminará el nodo. Esto lo realizamos con el método (función que pertenece a un objeto: window.setTimeout) setTimeOut
+    /**
+     * @param {function} Función anónima con las instrucciones a ejececutar
+     * @param {Number} Número de milisegundos que hay que esperar antes de que se ejecute el código. Si se omite es 0
+     */
+    setTimeout(
+        () => {//callback o función dentro de otra función
+            eliminarNodo("#temporal3")
+        },
+        15000 //Segundo parámetro
+    );
+ }
