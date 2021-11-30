@@ -1,5 +1,5 @@
 "use strict";
-
+//Código alternativo
 document.querySelector("#b_generar").addEventListener("click", (e)=>{
 	const aleatorio=(max,min)=>Math.floor(Math.random() * ((max+1) - min)) + min;
 	let array=new Array();
