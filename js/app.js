@@ -162,6 +162,7 @@ document.querySelector("#enlace_2").onclick = e => {
  * Objeto Persona con las propiedades nombre, edad y género, y el método obtDetalles(), que muestra por pantalla las propiedades de la persona.
  * Un objeto es una colección de propiedades, y una propiedad es una asociación entre un nombre (o clave) y un valor. El valor de una propiedad puede ser una función, en cuyo caso la propiedad es conocida como un método.
  */
+ import {Persona} from './Persona.js';
  document.querySelector("#enlace_3").onclick = e => {
     e.preventDefault();
     //object initializer --> Iniciador de objeto
@@ -189,16 +190,22 @@ document.querySelector("#enlace_2").onclick = e => {
         <div>Género: ${this.genero}</div>
         `;
     }
+    const persona3 = new Persona("Manolo","m");
+    persona3.setEdad("1973-04-06");
     eliminarNodo("#temporal3");
     const div = crearNodo(e.target.parentElement,"temporal3");
     div.innerHTML = `
         <fieldset>
-            <legend>Persona 1:</legend>
+            <legend>Persona 1: (objeto sin plantilla. No instanciado)</legend>
             ${persona.obtDetalles()}
         </fieldset>
         <fieldset>
-            <legend>Persona 2:</legend>
+            <legend>Persona 2: (objeto sin plantilla. No instanciado)</legend>
             ${persona2.obtDetalles()}
+        </fieldset>
+        <fieldset>
+            <legend>Persona 3: (Objeto instanciado de la clase Persona)</legend>
+            ${persona3.obtDetalles()}
         </fieldset>
     `;
     //Establecemos un contador que eliminará el nodo. Esto lo realizamos con el método (función que pertenece a un objeto: window.setTimeout) setTimeOut
